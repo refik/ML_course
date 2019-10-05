@@ -44,6 +44,6 @@ def grid_search(y, tx, w0, w1):
                 min_loss = loss
                 min_loss_w = loss_w
                 
-    print("Minimum Loss: {} for w={}".format(min_loss, min_loss_w))
+    print("[grid search] Minimum Loss: {} for w={}".format(min_loss, min_loss_w))
     
     return losses
