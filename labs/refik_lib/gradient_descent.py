@@ -6,10 +6,6 @@ import numpy as np
 
 def compute_gradient(y, tx, w, mae=False):
     """Compute the gradient."""
-    # ***************************************************
-    # INSERT YOUR CODE HERE
-    # TODO: compute gradient and error vector
-    # ***************************************************
     e = y - tx @ w
     
     if mae:
@@ -26,16 +22,7 @@ def gradient_descent(y, tx, initial_w, max_iters, gamma, mae=False):
     w = initial_w
 
     for n_iter in range(max_iters):
-        # ***************************************************
-        # INSERT YOUR CODE HERE
-        # TODO: compute gradient and loss
-        # ***************************************************
         gradient = compute_gradient(y, tx, w, mae)
-
-        # ***************************************************
-        # INSERT YOUR CODE HERE
-        # TODO: update w by gradient
-        # ***************************************************
         w = w - gamma * gradient
         loss = compute_loss(y, tx, w, mae=mae)
         
