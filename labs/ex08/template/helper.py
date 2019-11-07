@@ -3,7 +3,7 @@
 import os
 import shutil
 import numpy as np
-from scipy import misc
+from skimage.io import imread
 
 
 def load_data():
@@ -30,18 +30,19 @@ def build_dir(dir):
 
 
 def load_image(path):
-    """use the scipy.misc to load the image."""
-    return misc.imread(path)
+    """use the scipy.misc to load the image. Refik: This didn't work, using skimage instead."""
+    return imread(path)
 
 
 def build_distance_matrix(data, mu):
     """build a distance matrix.
-
-    row of the matrix represents the data point,
-    column of the matrix represents the k-th cluster.
+    return
+        distance matrix:
+            row of the matrix represents the data point,
+            column of the matrix represents the k-th cluster.
     """
     # ***************************************************
     # INSERT YOUR CODE HERE
     # TODO: build distance matrix
     # ***************************************************
-    raise NotImplementedError
+    return np.stack([np.linalg.norm(data-c, axis=1) for c in mu], axis=1)
